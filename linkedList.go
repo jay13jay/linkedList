@@ -20,6 +20,7 @@ func (l *LinkedList) Push(value int) {
 	// newNode.next = l.head
 	l.head = newNode
 	l.count++
+	return
 }
 
 func (l *LinkedList) Append(value int) {
@@ -37,11 +38,15 @@ func (l *LinkedList) Append(value int) {
 
 	last.next = newNode
 	l.count++
+	return
 
 }
 
 func (l *LinkedList) InsertAfter(node *Node, value int) {
 	// Insert value after the provided Node
+	newNode := &Node{data: value, next: node.next}
+	node.next = newNode
+
 }
 
 func (l *LinkedList) PrintList() {
@@ -52,6 +57,7 @@ func (l *LinkedList) PrintList() {
 	}
 	fmt.Println("nil")
 }
-func (l *LinkedList) Len() {
-	fmt.Println(l.count)
+func (l *LinkedList) Len() int {
+	// fmt.Println(l.count)
+	return l.count
 }
