@@ -52,3 +52,6 @@ func (l *LinkedList) PrintList() {
 	}
 	fmt.Println("nil")
 }
+func (l *LinkedList) Len() {
+	fmt.Println(l.count)
+}
