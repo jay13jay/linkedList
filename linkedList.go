@@ -50,7 +50,7 @@ func (l *LinkedList) InsertAfter(node *Node, value int) {
 }
 
 func (l *LinkedList) PrintList() {
-	curr := l.head
+	curr := l.Head
 	for curr != nil {
 		fmt.Printf("%d -> ", curr.data)
 		curr = curr.next
@@ -59,5 +59,5 @@ func (l *LinkedList) PrintList() {
 }
 func (l *LinkedList) Len() int {
 	// fmt.Println(l.count)
-	return l.count
+	return l.Count
 }
