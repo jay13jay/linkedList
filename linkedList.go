@@ -1,17 +1,19 @@
-package jhaxgoll
+package linkedList
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Node struct {
 	data int
 	next *Node
 }
 
-type LL struct {
+type LinkedList struct {
 	head *Node
 }
 
-func (l *LL) Push(value int) {
+func (l *LinkedList) Push(value int) {
 	newNode := &Node{data: value}
 	newNode.next = l.head
 	l.head = newNode
