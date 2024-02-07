@@ -10,25 +10,25 @@ type Node struct {
 }
 
 type LinkedList struct {
-	head  *Node // Pointer to the first node of the list, or null if list is empty
-	count int   // len of the list
+	Head  *Node // Pointer to the first node of the list, or null if list is empty
+	Count int   // len of the list
 }
 
 func (l *LinkedList) Push(value int) {
 	// Push value to the front of the list
-	newNode := &Node{data: value, next: l.head}
+	newNode := &Node{data: value, next: l.Head}
 	// newNode.next = l.head
-	l.head = newNode
-	l.count++
+	l.Head = newNode
+	l.Count++
 	return
 }
 
 func (l *LinkedList) Append(value int) {
 	// Append value to the end of the list
 	newNode := &Node{data: value, next: nil} // next is null as this will be the last node
-	last := l.head
-	if l.head == nil {
-		l.head = newNode
+	last := l.Head
+	if l.Head == nil {
+		l.Head = newNode
 		return
 	}
 
@@ -37,7 +37,7 @@ func (l *LinkedList) Append(value int) {
 	}
 
 	last.next = newNode
-	l.count++
+	l.Count++
 	return
 
 }
