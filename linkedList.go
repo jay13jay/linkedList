@@ -5,18 +5,43 @@ import (
 )
 
 type Node struct {
-	data int
-	next *Node
+	data int   // int value
+	next *Node // pointer to the next node in the list
 }
 
 type LinkedList struct {
-	head *Node
+	head  *Node // Pointer to the first node of the list, or null if list is empty
+	count int   // len of the list
 }
 
 func (l *LinkedList) Push(value int) {
-	newNode := &Node{data: value}
-	newNode.next = l.head
+	// Push value to the front of the list
+	newNode := &Node{data: value, next: l.head}
+	// newNode.next = l.head
 	l.head = newNode
+	l.count++
+}
+
+func (l *LinkedList) Append(value int) {
+	// Append value to the end of the list
+	newNode := &Node{data: value, next: nil} // next is null as this will be the last node
+	last := l.head
+	if l.head == nil {
+		l.head = newNode
+		return
+	}
+
+	for last.next != nil {
+		last = last.next // traverse to the end of the list
+	}
+
+	last.next = newNode
+	l.count++
+
+}
+
+func (l *LinkedList) InsertAfter(node *Node, value int) {
+	// Insert value after the provided Node
 }
 
 func (l *LinkedList) PrintList() {
